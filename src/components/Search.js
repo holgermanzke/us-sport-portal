@@ -8,9 +8,11 @@ const SearchField = styled.input`
   border-radius: 20px;
   font-family: "News Cycle", sans-serif;
   font-size: 1rem;
-  padding-left: 5px;
+  padding-left: 15px;
+  flex-grow: 1;
+  margin: 5px 20px;
 `;
 
 export default function Search() {
-  return <SearchField placeholder="search..." />;
+  return <SearchField autofocus placeholder="search..." />;
 }

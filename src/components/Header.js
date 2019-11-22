@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import Title from "./Title";
 import SearchField from "./Search";
+import SearchButton from "./SearchButton";
 
 const AppBar = styled.header`
   background: #2b2758;
@@ -12,10 +13,15 @@ const AppBar = styled.header`
 `;
 
 export default function Header() {
+  const [showSearch, setShowSearch] = React.useState(false);
   return (
     <AppBar>
-      <Title text="Bundesliga DB"></Title>
-      <SearchField />
+      {!showSearch && <Title text="Bundesliga DB" />}
+      {showSearch && <SearchField />}
+      <SearchButton
+        active={showSearch}
+        onClick={() => setShowSearch(!showSearch)}
+      />
     </AppBar>
   );
 }
