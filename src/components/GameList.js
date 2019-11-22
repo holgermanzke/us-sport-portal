@@ -4,8 +4,6 @@ import { getResults } from "../api/results";
 export default function GameList() {
   const [games, setGames] = React.useState([]);
 
-  console.log(games);
-
   async function refreshGames() {
     const foundGames = await getResults();
     setGames(foundGames);
@@ -19,9 +17,12 @@ export default function GameList() {
 
   return (
     <div>
+      <h2>Aktueller Spieltag</h2>
       {games.map(game => (
         <div key={game.MatchID}>
-          {game.Team1.TeamName} vs. {game.Team2.TeamName}
+          <div>
+            {game.Team1.TeamName} vs. {game.Team2.TeamName}
+          </div>
         </div>
       ))}
     </div>
