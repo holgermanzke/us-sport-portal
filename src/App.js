@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import GlobalStyles from "./components/GlobalStyles";
 import AppBar from "./components/Header";
+import GameList from "./components/GameList";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <AppBar>
         <h1>US Sports App</h1>
       </AppBar>
+      <GameList />
     </>
   );
 }
