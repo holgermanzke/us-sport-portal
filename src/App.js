@@ -7,9 +7,8 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <AppBar>
-        <h1>US Sports App</h1>
-      </AppBar>
+
+      <AppBar />
     </>
   );
 }
