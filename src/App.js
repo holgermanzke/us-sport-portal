@@ -10,6 +10,7 @@ function App() {
       <GlobalStyles />
 
       <AppBar />
+      <GameList />
     </>
   );
 }
