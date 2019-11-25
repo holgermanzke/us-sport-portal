@@ -16,7 +16,7 @@ export default function Header() {
   const [showSearch, setShowSearch] = React.useState(false);
   return (
     <AppBar>
-      {!showSearch && <Title text="Bundesliga DB" />}
+      {!showSearch && <Title text="Bundesliga" />}
       {showSearch && <SearchField />}
       <SearchButton
         active={showSearch}
