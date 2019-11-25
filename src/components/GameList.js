@@ -10,7 +10,7 @@ const GameContainer = styled.div`
   align-items: center;
   margin: 50px;
 `;
-const GameDate = styled.div``;
+// const GameDate = styled.div``;
 
 const TeamNames = styled.div`
   margin-top: 50px;
