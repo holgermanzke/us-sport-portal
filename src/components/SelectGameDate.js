@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const SearchField = styled.input`
+const SelectField = styled.select`
   background: #eeeeee;
   outline: none;
   height: 80%;
@@ -13,6 +13,6 @@ const SearchField = styled.input`
   margin: 5px 20px;
 `;
 
-export default function Search() {
-  return <SearchField autofocus placeholder="search..." />;
+export default function Select() {
+  return <SelectField autofocus placeholder="search..." />;
 }

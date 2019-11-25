@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Title from "./Title";
-import SearchField from "./Search";
+import SelectField from "./SelectGameDate";
 import SearchButton from "./SearchButton";
 
 const AppBar = styled.header`
@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <AppBar>
       {!showSearch && <Title text="Bundesliga" />}
-      {showSearch && <SearchField />}
+      {showSearch && <SelectField />}
       <SearchButton
         active={showSearch}
         onClick={() => setShowSearch(!showSearch)}

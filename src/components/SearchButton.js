@@ -7,6 +7,8 @@ const SearchButton = styled.button`
   outline: none;
   cursor: pointer;
   justify-self: flex-end;
+  background: transparent;
+  border: none;
 `;
 
 const Icon = styled.img`
