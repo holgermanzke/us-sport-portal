@@ -36,7 +36,7 @@ export default function GameList() {
 
   async function refreshGames() {
     const foundGames = await getResults();
-    setTimeout(1500);
+    setTimeout(3000);
     // let fullGameDate = new Date({games.MatchDateTime})
     setGames(foundGames);
     setLoading(false);
@@ -52,22 +52,32 @@ export default function GameList() {
     <GameContainer>
       {loading && <img src={preloader} alt="loading" />}
       {!loading && <h2>{games[0].Group.GroupName}</h2>}
-      {games.map(game => (
-        <div key={game.MatchID}>
-          {/* <GameDate> () => {
+      {games.map(game => {
+        const gameDate = new Date(game.MatchDateTime);
+        return (
+          <div key={game.MatchID}>
+            {/* <GameDate> () => {
             let fullGameDate = new Date({game.MatchDateTime})
             }
             {game.MatchDateTime}</GameDate> */}
-          <TeamNames>
-            {game.Team1.TeamName} - {game.Team2.TeamName}
-          </TeamNames>
-          <IconWrapper>
-            <TeamIcon src={game.Team1.TeamIconUrl} alt={game.Team1.ShortName} />
-            <img src={vsIcon} alt="versus" width="40px" height="40px" />
-            <TeamIcon src={game.Team2.TeamIconUrl} alt={game.Team2.ShortName} />
-          </IconWrapper>
-        </div>
-      ))}
+            {gameDate.toLocaleDateString()}
+            <TeamNames>
+              {game.Team1.TeamName} - {game.Team2.TeamName}
+            </TeamNames>
+            <IconWrapper>
+              <TeamIcon
+                src={game.Team1.TeamIconUrl}
+                alt={game.Team1.ShortName}
+              />
+              <img src={vsIcon} alt="versus" width="40px" height="40px" />
+              <TeamIcon
+                src={game.Team2.TeamIconUrl}
+                alt={game.Team2.ShortName}
+              />
+            </IconWrapper>
+          </div>
+        );
+      })}
     </GameContainer>
   );
 }
