@@ -5,7 +5,8 @@ import SelectField from "./SelectMatchDay";
 import SelectButton from "./SelectButton";
 
 const AppBar = styled.header`
-  background: #2b2758;
+  /* background: #2b2758; */
+  background: ${props => props.theme.secondarycolor};
   height: 60px;
   display: flex;
   align-items: center;
