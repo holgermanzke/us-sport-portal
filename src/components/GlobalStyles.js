@@ -15,7 +15,7 @@ export default function GlobalStyles() {
           height: 100vh;
           width: 100vw;
           background: #2c6570;
-          color: #eeeeee;
+          color: #ffffff;
           font-family: "News Cycle", sans-serif;
         }
       `}
