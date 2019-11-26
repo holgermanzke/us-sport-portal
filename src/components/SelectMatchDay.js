@@ -16,10 +16,9 @@ const SelectField = styled.select`
 export default function SelectMatchDay({ selectedValue, onChange }) {
   return (
     <SelectField
-      autofocus
       value={selectedValue}
       onChange={event => {
-        onChange(event.target.value);
+        onChange(Number(event.target.value));
       }}
     >
       <option value="1">1. Spieltag</option>

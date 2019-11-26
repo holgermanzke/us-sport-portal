@@ -30,12 +30,12 @@ const IconWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `;
-export default function GameList({ gameDay }) {
+export default function GameList({ matchDay }) {
   const [games, setGames] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
 
   async function refreshGames() {
-    const foundGames = await getResults(gameDay);
+    const foundGames = await getResults(matchDay);
     setGames(foundGames);
     setLoading(false);
     return games;
@@ -44,7 +44,7 @@ export default function GameList({ gameDay }) {
   React.useEffect(() => {
     refreshGames();
     // eslint-disable-next-line
-  }, []);
+  }, [matchDay]);
 
   return (
     <GameContainer>

@@ -13,13 +13,13 @@ const AppBar = styled.header`
   justify-content: space-around;
 `;
 
-export default function Header({ selectMatchDay, onSelectChangeValue }) {
+export default function Header({ matchDay, onMatchDayChange }) {
   const [showSearch, setShowSearch] = React.useState(false);
   return (
     <AppBar>
       {!showSearch && <Title text="Bundesliga" />}
       {showSearch && (
-        <SelectField value={selectMatchDay} onChange={onSelectChangeValue} />
+        <SelectField value={matchDay} onChange={onMatchDayChange} />
       )}
       <SelectButton
         active={showSearch}
