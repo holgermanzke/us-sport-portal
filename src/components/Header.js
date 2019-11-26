@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Title from "./Title";
-import SearchField from "./Search";
-import SearchButton from "./SearchButton";
+import SelectField from "./SelectMatchDay";
+import SelectButton from "./SelectButton";
 
 const AppBar = styled.header`
   /* background: #2b2758; */
@@ -13,13 +13,15 @@ const AppBar = styled.header`
   justify-content: space-around;
 `;
 
-export default function Header() {
+export default function Header({ matchDay, onMatchDayChange }) {
   const [showSearch, setShowSearch] = React.useState(false);
   return (
     <AppBar>
       {!showSearch && <Title text="Bundesliga" />}
-      {showSearch && <SearchField />}
-      <SearchButton
+      {showSearch && (
+        <SelectField value={matchDay} onChange={onMatchDayChange} />
+      )}
+      <SelectButton
         active={showSearch}
         onClick={() => setShowSearch(!showSearch)}
       />

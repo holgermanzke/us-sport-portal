@@ -7,13 +7,18 @@ import { ThemeProvider } from "emotion-theming";
 import { themes } from "./themes/themes";
 
 function App() {
+  const [matchDay, setMatchDay] = React.useState(17);
+
   return (
     <>
       <ThemeProvider theme={themes.default}>
         <GlobalStyles />
 
-        <AppBar />
-        <GameList />
+        <AppBar
+          matchDay={matchDay}
+          onMatchDayChange={newMatchDay => setMatchDay(newMatchDay)}
+        />
+        <GameList matchDay={matchDay} />
       </ThemeProvider>
     </>
   );

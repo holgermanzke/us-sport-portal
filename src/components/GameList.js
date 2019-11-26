@@ -30,14 +30,12 @@ const IconWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `;
-export default function GameList() {
+export default function GameList({ matchDay }) {
   const [games, setGames] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
 
   async function refreshGames() {
-    const foundGames = await getResults();
-    setTimeout(3000);
-    // let fullGameDate = new Date({games.MatchDateTime})
+    const foundGames = await getResults(matchDay);
     setGames(foundGames);
     setLoading(false);
     return games;
@@ -46,7 +44,7 @@ export default function GameList() {
   React.useEffect(() => {
     refreshGames();
     // eslint-disable-next-line
-  }, []);
+  }, [matchDay]);
 
   return (
     <GameContainer>
@@ -56,10 +54,6 @@ export default function GameList() {
         const gameDate = new Date(game.MatchDateTime);
         return (
           <div key={game.MatchID}>
-            {/* <GameDate> () => {
-            let fullGameDate = new Date({game.MatchDateTime})
-            }
-            {game.MatchDateTime}</GameDate> */}
             {gameDate.toLocaleDateString()}
             <TeamNames>
               {game.Team1.TeamName} - {game.Team2.TeamName}
