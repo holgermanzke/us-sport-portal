@@ -1,6 +1,7 @@
-export async function getResults() {
+export async function getResults(gameDay) {
+  // const today = new Date();
   const response = await fetch(
-    `https://www.openligadb.de/api/getmatchdata/bl1`,
+    `https://www.openligadb.de/api/getmatchdata/bl1/2019/${gameDay}`,
     {
       headers: {
         "Content-Type": "application/json"

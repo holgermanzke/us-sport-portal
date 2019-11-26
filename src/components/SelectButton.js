@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import search from "../assets/search.svg";
 import cancel from "../assets/cancel.svg";
 
-const SearchButton = styled.button`
+const SelectButton = styled.button`
   outline: none;
   cursor: pointer;
   justify-self: flex-end;
@@ -18,8 +18,8 @@ const Icon = styled.img`
 
 export default function Button({ active, onClick }) {
   return (
-    <SearchButton onClick={onClick}>
+    <SelectButton onClick={onClick}>
       <Icon src={active ? cancel : search} />
-    </SearchButton>
+    </SelectButton>
   );
 }
