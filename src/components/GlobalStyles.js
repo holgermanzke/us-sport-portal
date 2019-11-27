@@ -4,7 +4,7 @@ import { Global, css } from "@emotion/core";
 export default function GlobalStyles() {
   return (
     <Global
-      styles={css`
+      styles={theme => css`
         *,
         *::after,
         *::before {
@@ -14,7 +14,7 @@ export default function GlobalStyles() {
           margin: 0;
           height: 100vh;
           width: 100vw;
-          background: #2c6570;
+          background: ${theme.primarycolor};
           color: #ffffff;
           font-family: "News Cycle", sans-serif;
         }
