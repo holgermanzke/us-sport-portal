@@ -3,6 +3,7 @@ import { getResults } from "../api/results";
 import styled from "@emotion/styled";
 import preloader from "../assets/preloader.gif";
 import vsIcon from "../assets/vs.png";
+import { Link } from "react-router-dom";
 
 const GameContainer = styled.div`
   display: flex;
@@ -48,6 +49,7 @@ export default function GameList({ matchDay }) {
 
   return (
     <GameContainer>
+      <Link to="/goalgetter">Goalgetter</Link>
       {loading && <img src={preloader} alt="loading" />}
       {!loading && <h2>{games[0].Group.GroupName}</h2>}
       {games.map(game => {
