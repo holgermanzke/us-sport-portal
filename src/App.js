@@ -5,8 +5,8 @@ import AppBar from "./components/Header";
 import GameList from "./pages/GameList";
 import { ThemeProvider } from "emotion-theming";
 import { themes } from "./themes/themes";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Goalgetter from "./pages/Goalgetter";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Goalgetters from "./pages/Goalgetters";
 
 function App() {
   const [matchDay, setMatchDay] = React.useState(17);
@@ -27,10 +27,7 @@ function App() {
               path="/"
               component={() => <GameList matchDay={matchDay} />}
             />
-
-            <Route path="/goalgetter">
-              <Goalgetter />
-            </Route>
+            <Route path="/goalgetter" component={Goalgetters} />
           </Switch>
         </Router>
       </ThemeProvider>
